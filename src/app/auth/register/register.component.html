@@ -1,0 +1,32 @@
+<div class="auth-container">
+  <h1>Join Us</h1>
+  <div class="auth-card">
+      <h2>Create Account</h2>
+      <form [formGroup]="form" (ngSubmit)="register()">
+          <div class="input-group">
+              <input type="text" formControlName="name" placeholder="Name">
+              <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="error">
+                  Name must be at least 2 characters
+              </div>
+          </div>
+
+          <div class="input-group">
+              <input type="email" formControlName="email" placeholder="Email">
+              <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="error">
+                  Please enter a valid email
+              </div>
+          </div>
+
+          <div class="input-group">
+              <input type="password" formControlName="password" placeholder="Password">
+              <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched" class="error">
+                  Password must be at least 6 characters
+              </div>
+          </div>
+
+          <button type="submit" [disabled]="form.invalid">Register</button>
+      </form>
+
+      <p>Already have an account? <a routerLink="/login">Sign in</a></p>
+  </div>
+</div>

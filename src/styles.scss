@@ -1,1 +1,173 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --dark-color: #8B0034;    
+    --light-color: #FFF5F7;   
+    --primary-color: #FF4D6D; 
+    --dark-primary-color: #C9184A;
+    --dark-gray-color: #555;   
+    --dark-hover-color: #5A001F; 
+    --box-shadow: 0 4px 12px rgba(255, 77, 109, 0.2);
+
+    --accent-color: #FF758F;   
+    --input-bg: #FFF0F3;       
+    --text-color: #5A001F;     
+}
+
+body{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-family: Helvetica;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    color: var(--text-color);
+    padding: 2rem;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-weight: 600;
+        background: var(--light-color);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.auth-card {
+    background: var(--light-color);
+    padding: 2.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--dark-primary-color);
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        background: linear-gradient(to right, var(--dark-color), var(--accent-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            input {
+                width: 100%;
+                padding: 1rem;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                background-color: rgba(255, 255, 255, 0.9);
+                color: var(--dark-color);
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                &:focus {
+                    outline: none;
+                    border-color: var(--accent-color);
+                    box-shadow: 0 0 8px var(--accent-color);
+                    background-color: white;
+                }
+
+                &::placeholder {
+                    color: #666;
+                    opacity: 0.8;
+                }
+            }
+
+            .error {
+                font-size: 0.9rem;
+                color: #ff6b6b;
+                margin-top: 0.25rem;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--accent-color), var(--dark-primary-color));
+            border: 2px solid var(--dark-primary-color);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            &:hover {
+                background: linear-gradient(to right, var(--dark-primary-color), var(--primary-color));
+                border-color: var(--primary-color);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+                transform: translateY(-1px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+
+            &:disabled {
+                background: linear-gradient(to right, #a0a0a0, #7a7a7a);
+                cursor: not-allowed;
+                border-color: gray;
+                box-shadow: none;
+            }
+        }
+    }
+
+    p {
+        margin-top: 1.5rem;
+        font-size: 14px;
+        color: var(--text-color);
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--dark-hover-color);
+                text-decoration: underline;
+            }
+        }
+    }
+}
