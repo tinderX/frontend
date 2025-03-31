@@ -9,11 +9,11 @@
         </div>
         <div class="feature">
             <h3>💬 Convenient chat</h3>
-            <p>Chat without limits and connect easily.</p>
+            <p>Chat without limits and connect easily!</p>
         </div>
         <div class="feature">
             <h3>🔒 Security</h3>
-            <p>Your data is protected, no fake accounts.</p>
+            <p>Your data is protected, no fake accounts!</p>
         </div>
     </div>
 
@@ -22,3 +22,18 @@
         <a routerLink="/login" class="btn btn-outline">Log In</a>
     </div>
 </div>
+
+<footer class="home-footer" [ngClass]="{ 'show': showFooter }">
+    <div class="footer-content">
+        <p>&copy; 2025 TinderX. All rights reserved.</p>
+        <nav class="footer-links">
+            <a routerLink="/about">About Us</a>
+            <a routerLink="/terms">Terms of Service</a>
+            <a routerLink="/privacy">Privacy Policy</a>
+            <a routerLink="/contact">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+
+
